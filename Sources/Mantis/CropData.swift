@@ -36,11 +36,19 @@ public typealias Transformation = (
     verticallyFlipped: Bool
 )
 
-public struct CropRegion: Equatable {
+public struct CropRegion: Equatable, Codable {
     public var topLeft: CGPoint
     public var topRight: CGPoint
     public var bottomLeft: CGPoint
     public var bottomRight: CGPoint
+    
+    public init(topLeft: CGPoint, topRight: CGPoint, bottomLeft: CGPoint, bottomRight: CGPoint) {
+        self.topLeft = topLeft
+        self.topRight = topRight
+        self.bottomLeft = bottomLeft
+        self.bottomRight = bottomRight
+    }
+    
 }
 
 public typealias CropInfo = (
