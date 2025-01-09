@@ -4,20 +4,21 @@
 import PackageDescription
 
 let package = Package(
-    name: "Mantis",
-    defaultLocalization: "en",
-    platforms: [.iOS(.v11), .macOS(.v10_15)],
-    products: [
-        .library(
-            name: "Mantis",
-            targets: ["Mantis"])
-    ],
-    targets: [
-        .target(
-            name: "Mantis",
-            exclude: ["Info.plist", "Resources/Info.plist"],
-            resources: [.process("Resources")],
-            swiftSettings: [.define("MANTIS_SPM")]
-        )
-    ]
+  name: "Mantis",
+  defaultLocalization: "en",
+  platforms: [.iOS(.v12), .macOS(.v10_15)],
+  products: [
+    .library(
+      name: "Mantis",
+      targets: ["Mantis"]
+    )
+  ],
+  targets: [
+    .target(
+      name: "Mantis",
+      exclude: ["Info.plist", "Resources/Info.plist"],
+      resources: [.process("Resources")],
+      swiftSettings: [.define("MANTIS_SPM")]
+    )
+  ]
 )
