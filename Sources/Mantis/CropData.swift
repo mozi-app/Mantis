@@ -98,7 +98,7 @@ public struct Transformation: Equatable {
     }
 }
 
-public struct CropRegion: Equatable {
+public struct CropRegion: Equatable, Codable {
     public var topLeft: CGPoint
     public var topRight: CGPoint
     public var bottomLeft: CGPoint

@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Mantis",
     defaultLocalization: "en",
-    platforms: [.iOS(.v12), .macCatalyst(.v13)],
+    platforms: [.iOS(.v17), .macCatalyst(.v13)],
     products: [
         .library(
             name: "Mantis",
