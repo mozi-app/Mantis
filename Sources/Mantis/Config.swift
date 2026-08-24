@@ -62,6 +62,12 @@ public struct Config {
     }()
 
     static private(set) var bundle: Bundle? = {
+#if MANTIS_SPM
+        // An SPM build ships no `com.echo.framework.Mantis` framework, so this lookup always misses.
+        // A miss makes CoreFoundation rebuild every loaded image's bundle on the calling thread,
+        // which blocks the main thread for seconds. `LocalizedHelper` uses `Bundle.module` here.
+        return nil
+#else
         guard let bundle = Bundle(identifier: bundleIdentifier) else {
             return nil
         }
@@ -71,6 +77,7 @@ public struct Config {
         }
         
         return Bundle(url: url)
+#endif
     }()
     
     public var enableUndoRedo: Bool = false
